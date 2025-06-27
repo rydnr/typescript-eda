@@ -1,0 +1,23 @@
+#+title: Ports
+
+The ~Ports~ singleton is a simple key-value store for ports and their implementations.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/domain/ports.ts
+import { Port } from './port';
+
+export class Ports {
+  private static readonly ports = new Map<string, Port>();
+
+  public static get<T extends Port>(port: new (...args: any[]) => T): T {
+    const implementation = this.ports.get(port.name);
+    if (!implementation) {
+      throw new Error(`Port ${port.name} not found`);
+    }
+    return implementation as T;
+  }
+
+  public static set<T extends Port>(port: new (...args: any[]) => T, implementation: T): void {
+    this.ports.set(port.name, implementation);
+  }
+}
+#+end_src

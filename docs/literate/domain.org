@@ -1,0 +1,10 @@
+#+title: Domain Layer
+
+This file contains the literate programming source for the domain layer of the `typescript-eda` framework.
+
+* [[file:value-object.org][ValueObject]]
+* [[file:entity.org][Entity]]
+* [[file:event.org][Event]]
+* [[file:port.org][Port]]
+* [[file:repository.org][Repository]]
+* [[file:ports.org][Ports]]

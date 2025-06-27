@@ -1,0 +1,7 @@
+#+title: Port
+
+The ~Port~ is a marker interface for ports.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/domain/port.ts
+export interface Port {}
+#+end_src

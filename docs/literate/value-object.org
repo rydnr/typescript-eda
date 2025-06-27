@@ -1,0 +1,19 @@
+#+title: ValueObject
+
+The ~ValueObject~ is a base class for objects that are defined by their properties, not by an identifier.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/domain/value-object.ts
+export abstract class ValueObject<T> {
+  protected constructor(protected readonly props: T) {}
+
+  public equals(vo?: ValueObject<T>): boolean {
+    if (vo === null || vo === undefined) {
+      return false;
+    }
+    if (vo.props === undefined) {
+      return false;
+    }
+    return JSON.stringify(this.props) === JSON.stringify(vo.props);
+  }
+}
+#+end_src

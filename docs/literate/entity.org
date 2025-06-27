@@ -1,0 +1,13 @@
+#+title: Entity
+
+The ~Entity~ is a base class for objects that have a distinct identity that runs through time and different states.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/domain/entity.ts
+import { ValueObject } from './value-object';
+
+export abstract class Entity<T> extends ValueObject<T> {
+  protected constructor(protected readonly props: T) {
+    super(props);
+  }
+}
+#+end_src

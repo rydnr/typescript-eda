@@ -1,0 +1,9 @@
+#+title: Repository
+
+The ~Repository~ is a marker interface for repositories, extending ~Port~.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/domain/repository.ts
+import { Port } from './port';
+
+export interface Repository extends Port {}
+#+end_src

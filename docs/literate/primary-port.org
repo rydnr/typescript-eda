@@ -1,0 +1,11 @@
+#+title: PrimaryPort
+
+The ~PrimaryPort~ is an interface for primary adapters.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/application/primary-port.ts
+import { Application } from './application';
+
+export interface PrimaryPort {
+  accept(app: Application): Promise<void>;
+}
+#+end_src

@@ -1,0 +1,9 @@
+#+title: Event
+
+The ~Event~ is a base class for domain events.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/domain/event.ts
+export class Event {
+  constructor(public readonly payload: any) {}
+}
+#+end_src

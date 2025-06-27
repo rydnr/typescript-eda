@@ -1,0 +1,15 @@
+#+title: Decorators
+
+This file contains the decorators for the application layer.
+
+#+begin_src typescript :tangle ../../packages/eda-core/src/application/decorators.ts
+export function Enable(adapter: any): ClassDecorator {
+  return (target: any) => {
+    if (!Reflect.hasMetadata('adapters', target)) {
+      Reflect.defineMetadata('adapters', [], target);
+    }
+    const adapters = Reflect.getMetadata('adapters', target);
+    adapters.push(adapter);
+  };
+}
+#+end_src

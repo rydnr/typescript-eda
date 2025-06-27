@@ -1,0 +1,21 @@
+#+title: listen
+
+This file contains the @listen decorator.
+
+#+begin_src typescript :tangle ../../../packages/eda-core/src/domain/listen.decorator.ts
+import { Event } from './event';
+
+export function listen(event: Event): MethodDecorator {
+  return (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {
+    if (!Reflect.hasMetadata('listeners', target.constructor)) {
+      Reflect.defineMetadata('listeners', [], target.constructor);
+    }
+    const listeners = Reflect.getMetadata('listeners', target.constructor);
+    listeners.push({
+      event,
+      propertyKey,
+      descriptor,
+    });
+  };
+}
+#+end_src

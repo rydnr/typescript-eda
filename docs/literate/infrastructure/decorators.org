@@ -1,0 +1,13 @@
+#+title: Decorators
+
+This file contains the decorators for the infrastructure layer.
+
+#+begin_src typescript :tangle ../../../packages/eda-core/src/infrastructure/decorators.ts
+import { Port } from '../domain/port';
+
+export function AdapterFor(port: Port): ClassDecorator {
+  return (target: any) => {
+    Reflect.defineMetadata('port', port, target);
+  };
+}
+#+end_src
