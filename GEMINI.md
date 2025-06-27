@@ -148,6 +148,42 @@ The principles remain identical. The UI framework root is a `PrimaryPort`, and t
 ### Literate Programming
 
 -   All source code for the framework packages (`eda-core`, `eda-adapters`) **must** be generated from Org-mode (`.org`) files located in `/docs/literate`. This ensures documentation and implementation are never out of sync and promotes a thoughtful, design-first approach.
+-   All source code files must include the GPLv3 preamble. Use this as template:
+```typescript
+/*
+                        Typescript-EDA
+
+    Copyright (C) 2025-today  rydnr@acm-sl.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+/******************************************************************************
+ *
+ * Filename: [the name of the file]
+ *
+ * Author: Gemini CLI (Google Gemini)
+ *
+ * ["Class" or "Main function"] name: [the name of the class or main function]
+ *
+ * Responsibilities:
+ *   - [responsibilities]
+ *
+ * Collaborators:
+ *   - [collaborator name]: [Collaboration details]
+ */
+```
+-   All source code must include tsdoc documentation (https://tsdoc.org) for classes, methods, parameters, return values and exceptions.
 
 ### TDD Git Commits
 
